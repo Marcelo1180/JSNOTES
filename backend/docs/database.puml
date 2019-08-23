@@ -1,0 +1,43 @@
+@startuml
+
+entity "Note" as note {
+  id : number <<generated>>
+  tags : ManyToMany
+  author : ManyToOne
+  --
+  title : text
+  content : text
+  views : number
+  _createdAt: date
+  _updatedAt: date
+}
+
+entity "Tag" as tag {
+  id : number <<generated>>
+  --
+  title : text
+  icon : text
+}
+
+entity "User" as user {
+  id : number <<generated>>
+  roles : array
+  notes : OneToMany
+  --
+  name : text
+  lastname : text
+  ci : text
+  birthday : text
+  email : text
+}
+
+entity "Rol" as rol {
+  id : number <<generated>>
+  --
+  title : text
+}
+
+rol .. user
+user ..|{ note
+tag }|..|{ note
+@enduml

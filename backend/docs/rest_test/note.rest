@@ -1,0 +1,87 @@
+### ctrl+alt+r
+GET http://localhost:3000/notes
+
+### Send with wrong params
+POST http://localhost:3000/notes
+content-type: application/json
+
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+### Correct params
+POST http://localhost:3000/notes
+content-type: application/json
+
+{
+    "title": "Datos de prueba 1",
+    "content": "Corrigiendo los datos de prueba"
+}
+
+### Incorrect params
+POST http://localhost:3000/notes
+content-type: application/json
+
+{
+    "title": "Datos de prueba 2",
+    "content": "Corrigiendo los datos de prueba",
+    "tags": [1]
+}
+
+### Correct params
+POST http://localhost:3000/notes
+content-type: application/json
+
+{
+    "title": "Datos de prueba 2",
+    "content": "Corrigiendo los datos de prueba",
+    "tags": [
+        {
+            "id": 1
+        }, {
+            "id": 2
+        }
+    ]
+}
+
+### No exists tag with Correct params
+POST http://localhost:3000/notes
+content-type: application/json
+
+{
+    "title": "Datos de prueba 2",
+    "content": "Corrigiendo los datos de prueba",
+    "tags": [{
+        "id": 33
+    }]
+}
+
+### Example of deleted
+DELETE http://localhost:3000/notes/1
+
+### Example of Updated 
+PUT http://localhost:3000/notes/2
+content-type: application/json
+
+{
+    "title": "Datos de prueba 3",
+    "content": "Corrigiendo los datos de prueba 3",
+    "tags": [{
+    "id": 1,
+    "title": "Python",
+    "icon": "dev-icon-python"
+  }]
+}
+
+### List Tags
+GET http://localhost:3000/tags
+
+### Correct params
+POST http://localhost:3000/tags
+content-type: application/json
+
+{
+    "title": "Python",
+    "icon": "dev-icon-python"
+}
