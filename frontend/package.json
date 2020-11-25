@@ -13,7 +13,7 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "github-markdown-css": "^3.0.1",
-    "highlight.js": "^9.15.10",
+    "highlight.js": "^10.1.2",
     "quasar": "^1.0.0",
     "vue-simplemde": "^1.0.0"
   },
